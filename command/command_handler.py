@@ -25,8 +25,7 @@ def do_enc(command):
         async_enc = True
     try:
         if async_enc:
-            encryption.async_encryption(command[-1])
-            return f'You text in "{command[-1]}.async_encrypt"'
+            return encryption.async_encryption(command[-1])
         else:
             return encryption.sync_encryption(command[-1])
     except IndexError:
