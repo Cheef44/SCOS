@@ -44,3 +44,9 @@ def do_dec(command):
             return 'Data entered incorrectly'
     else:
         return 'You are not registered, enter the command "reg" and register'
+    
+def do_reg():
+    user_name = input('Enter your name: ')
+    password = input('Enter your password: ')
+    user = data_base.data_base(user_name, password)
+    return user.create_db_and_registration()
