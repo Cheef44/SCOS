@@ -13,22 +13,7 @@ def async_encryption(files):
         encrypt = PKCS1_OAEP.new(keys)
         encrypt = encrypt.encrypt(file)
         file_encorypt = open(f'{files}.async_encrypt.txt', 'wb')
-        file_encorypt.write(base64.b64encode(encrypt))
+        file_encorypt.write(encrypt)
         return f'You text in "{files}.async_encrypt.txt"'
-    except FileNotFoundError:
-        return 'File not'
-
-def sync_encryption(files):
-    try:
-        key_file = open('logs/sync_key.pem', 'rb').read()
-    except FileNotFoundError:
-        return 'Not keys'
-    try:
-        file = open(files, 'rb').read()
-        encrypt = AES.new(key_file, AES.MODE_EAX)
-        encrypt = encrypt.encrypt(file)
-        file_encorypt = open(f'{files}.sync_encrypt.txt', 'wb')
-        file_encorypt.write(base64.b64encode(encrypt))
-        return f'You text in "{files}.sync_encrypt.txt"'
     except FileNotFoundError:
         return 'File not'
