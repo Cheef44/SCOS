@@ -19,3 +19,5 @@ def async_decryption(files):
         return f'You text in "{files}.async_decrypt.txt"'
     except FileNotFoundError:
         return 'File not'
+    except ValueError:
+        return 'The file was encrypted using a different key'
