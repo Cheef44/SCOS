@@ -2,12 +2,15 @@ import sqlite3
 from Crypto.Hash import SHA3_512
 
 def check_registration():
-    db = sqlite3.connect('logs/user_info.db')
-    cursor = db.cursor()
-    user_name = cursor.execute("SELECT user_name FROM user").fetchall()
-    if user_name:
-        return True
-    else:
+    try:
+        db = sqlite3.connect('logs/user_info.db')
+        cursor = db.cursor()
+        user_name = cursor.execute("SELECT user_name FROM user").fetchall()
+        if user_name:
+            return True
+        else:
+            return False
+    except sqlite3.OperationalError:
         return False
     
 class data_base:
