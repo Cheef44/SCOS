@@ -34,10 +34,16 @@ def do_dec(command):
         user_name = input('Enter your name: ')
         password = input('Enter your password: ')
         user = data_base.data_base(user_name, password)
+        none_file = False
         if user.login():
             command = command[1:]
+            if len(command) > 1:
+                if '-p' == command[0]:
+                    none_file = True
+                else:
+                    none_file = 2
             try:
-                return decryption.async_decryption(command[-1])
+                return decryption.async_decryption(command[-1], none_file)
             except IndexError:
                 return 'A compulsory argument was not found. You did not enter the path to the file you want to decrypt'
         elif not user.login():
