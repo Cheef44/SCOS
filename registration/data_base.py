@@ -1,5 +1,6 @@
 import sqlite3
 from Crypto.Hash import SHA3_512
+from language import language
 
 def check_registration():
     try:
@@ -32,9 +33,9 @@ class data_base:
             cursor.execute("INSERT INTO user(user_name, password, pc_name) VALUES(?, ?, ?);", (self.user_name, self.password, self.pc_name))
             cursor.close()
             db.commit()
-            return "You're registered successfully."
+            return language.language()['data_base']['registered']
         else:
-            return "You're already registered."
+            return language.language()['data_base']['true_reg']
     
     def login(self):
         db = sqlite3.connect('logs/user_info.db')
@@ -46,4 +47,4 @@ class data_base:
             else:
                 return False
         else:
-            return "You're not registered."
+            return language.language()['data_base']['false_reg']
