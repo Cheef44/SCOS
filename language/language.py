@@ -18,6 +18,7 @@ def language(files=None):
             'not_keys': "Not keys",
             'true_encrypt': f'You text in "{files}.async_encrypt.txt"',
             'file_not': "File not",
+            'value_error': "The test exceeds the allowed number of characters",
         },
         
         'command_handler': {
@@ -38,6 +39,13 @@ def language(files=None):
                 'not_language': 'This language is not supported in the program',
                 'not_parameter': 'You have not entered a language',
             },
+            
+            'do_help': [
+                    "Commands:\n",
+                    "reg - 'this command is used to register in the programme, has no parameters'\n",
+                    "key - 'this programme is used to generate two keys, private and public. It has no parameters. Requires user data'\n",
+                    "enc <file> 'this command is used to encrypt files. It has one mandatory parameter, the name of the file which must be in the root directory of the programme'\n",
+                    "dec -p <file>- 'this command decrypts a file, fa. It has a parameter, the name of the encrypted file that should be in the root directory, it also has an optional flag -p, this flag allows not to create a file with the decrypted text, but to output it at once'. switchlan <language> - 'this programme changes the language of the program. It has one mandatory parameter, language (en, ru)'\n"],
             
             'name': 'Enter your name: ',
             'password': 'Enter your password: ',
@@ -64,6 +72,7 @@ def language(files=None):
             'not_keys': "Нет ключей",
             'true_encrypt': f'Ваш текст в "{files}.async_encrypt.txt"',
             'file_not': "Файла нет",
+            'value_error': "Текст превышает допустимое количество символов",
         },
         
         'command_handler': {
@@ -84,6 +93,13 @@ def language(files=None):
                 'not_language': 'Этот язык не поддерживается в программе',
                 'not_parameter': 'Вы не ввели язык',
             },
+            'do_help':[
+                "Команды:\n",
+                "reg - 'эта команда используется для регистрации в программе, не имеет параметров'\n",
+                "key - 'эта программа используется для генерации двух ключей, закрытого и открытого. Не имеет параметров. Требуются данные пользователя'",
+                "enc <file> - 'эта команда используется для шифрования файлов. Имеет один обязательный параметр - имя файла, который должен находиться в корневом каталоге программы'\n",
+                "dec -p <file>- 'эта команда расшифровывает файл, fa. У нее есть параметр - имя зашифрованного файла, который должен находиться в корневом каталоге, также есть необязательный флаг -p, этот флаг позволяет не создавать файл с расшифрованным текстом, а выводить его сразу'\n",
+                "switchlan <language> - 'эта программа изменяет язык программы. У нее есть один обязательный параметр - язык (en, ru)'\n"],
             
             'name': 'Введите ваше имя: ',
             'password': 'Введите ваш пароль: ',
