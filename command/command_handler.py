@@ -72,4 +72,4 @@ def do_switch_language(command):
         return language.language()['command_handler']['do_switch_language']['not_parameter']
         
 def do_help():
-    pass
+        return ''.join(language.language()['command_handler']['do_help'])
