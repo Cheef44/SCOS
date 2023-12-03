@@ -18,3 +18,5 @@ def async_encryption(files):
         return language.language(files)['encryption']['true_encrypt']
     except FileNotFoundError:
         return language.language()['encryption']['file_not']
+    except ValueError:
+        return language.language()['encryption']['value_error']
