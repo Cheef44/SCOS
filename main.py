@@ -24,5 +24,7 @@ try:
             print(command_handler.do_reg())
         if enter[0] == 'switchlan':
             print(command_handler.do_switch_language(enter))
+        if enter[0] == 'help':
+            print(command_handler.do_help())
 except KeyboardInterrupt:
     print('Exit...')
