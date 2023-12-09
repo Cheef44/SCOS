@@ -16,9 +16,10 @@ def language(files=None):
         
         'encryption': {
             'not_keys': "Not keys",
-            'true_encrypt': f'You text in "{files}.async_encrypt.txt"',
+            'true_encrypt': f'You text in "{files}_"',
             'file_not': "File not",
             'value_error': "The test exceeds the allowed number of characters",
+            'fileexists': f"Unable to create file because it already exists: '{files}_'",
         },
         
         'command_handler': {
@@ -70,9 +71,10 @@ def language(files=None):
         
         'encryption': {
             'not_keys': "Нет ключей",
-            'true_encrypt': f'Ваш текст в "{files}.async_encrypt.txt"',
+            'true_encrypt': f'Ваш текст в "{files}_"',
             'file_not': "Файла нет",
             'value_error': "Текст превышает допустимое количество символов",
+            'fileexists': f"Невозможно создать файл, так как он уже существует: '{files}_'"
         },
         
         'command_handler': {
