@@ -24,7 +24,7 @@ def async_decryption(files, none_file):
             string_file.append(decrypt.decode(encoding))
         if none_file == False:
             file_decrypt = open(f'{files}.async_decrypt.txt', 'w', encoding='utf-8')
-            file_decrypt.write(string_file)
+            file_decrypt.write(''.join(string_file))
             file_decrypt.close()
             return language.language(files)['decrypt']['true_decrypt']
         elif none_file == True:
