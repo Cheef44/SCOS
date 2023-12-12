@@ -30,6 +30,8 @@ def language(files=None):
             },
             'do_enc': {
                 'no_path': 'A compulsory argument was not found. You did not enter the path to the file you want to encrypt',
+                'no_parameter_t': "The '-t' parameter has not been entered",
+                'no_parameter_f': "The '-f' parameter has not been entered",
             },
             'do_dec': {
                 'no_path': 'A compulsory argument was not found. You did not enter the path to the file you want to decrypt',
@@ -85,6 +87,8 @@ def language(files=None):
             },
             'do_enc': {
                 'no_path': 'Обязательный аргумент не найден. Вы не ввели путь к файлу, который хотите зашифровать.',
+                'no_parameter_t': "Параметр '-t' не был введен",
+                'no_parameter_f': "Параметр '-f' не был введе",
             },
             'do_dec': {
                 'no_path': 'Обязательный аргумент не найден. Вы не ввели путь к файлу, который хотите расшифровать',

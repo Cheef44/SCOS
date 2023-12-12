@@ -25,8 +25,19 @@ def do_key(command):
 
 def do_enc(command):
     command = command[1:]
+    none_file = False
     try:
-        return encryption.async_encryption(command[-1])
+        if len(command) > 1:
+            if command[0] == '-f':
+                none_file = True
+                if '-t' in command:
+                    command = {'file': ' '.join(command[1:command.index('-t')]), 'text': ' '.join(command[command.index('-t')+1:])}
+                else:
+                    return language.language()['command_handler']['do_enc']['no_parameter_t']
+            else:
+                return language.language()['command_handler']['do_enc']['no_parameter_f']
+        return encryption.async_encryption(command, none_file)
+       
     except IndexError:
         return language.language()['command_handler']['do_enc']['no_path']
 
